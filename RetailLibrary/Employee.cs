@@ -5,6 +5,12 @@
     public class Employee
     {
 
+        public int Empid { get; set; }
+        public string EmpName { get; set; }
+
+        public string City { get; set; }
+
+
         public int CalculateSalary(int bs)
         {
             //Step 2 =assigning anonymous method to a reference varibale of delegate,

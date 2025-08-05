@@ -26,3 +26,90 @@ the return type, total 17 parameter out of which one is return type.
 
 3) Predicate Lambda: return type is a boolean, and it takes only one input parameter.
 Predicate keyword.
+-------------------------------------------------
+
+ Query---LINQ(Language Integrated Query)
+            //var ---Implicitly Typed variable
+
+            //var i = 'A';
+
+            //2 types LINQ syntax
+            1) Query--- select,where,from, group by,having 
+                2) MEthod----- select,where,from, group by,having
+
+                Collections:
+                1) Arrays:
+
+                int[] arr
+                string[] str
+                NonGeneric Array:
+                object[] obj=== int,string,char,bool,class object,float,bool
+
+                Disadvantage: 
+                int[] arr=new int[10];
+                Can I Dynamically increaase the array size?
+                No
+
+                Index Out of Bounds Exception
+
+                Why Generics? Dynamically increase the size of the collection.
+                Why required?
+
+
+                2) a) Generic Collections: specific TYPE of data in a specific collection then GENERIC Collection.
+                Collections Dynamic in size,so we always prefer Collections over Arrays.
+                using System.Collections.Generic;
+                Classes: List,Stack, Queue,Dictionary, SortedDictionary, SortedSet etc
+                                 T
+        List of integers: List<int>
+            List of string:List<string>
+           
+           Stack of ints:Stack<int>: Stack<int> s=new Stack<int>();
+                                           s.Push(10);
+                                           s.Push(100);
+
+
+            Principle: LIFO
+
+            Queue of Persons: Queue<Persons> q=new Queue<Persons>();
+            Persons p=new Persons();
+            p.personid=11;
+            p.personName="Hari";
+            p.Age=10;
+                                q.Enqueue(p);
+
+            Principle: FIFO
+
+            PErson-->personid,personName,age
+
+
+
+            Dictionary<int,int> 
+                      Key --playerid,
+                      Value--score
+
+
+            Dictionary<int,Employee> dictEmp=new Dictionary<int,Employee>();
+            Employee emp=new Employee();
+            emp.Empid=1;
+            emp.Empname="Suresh";
+            emp.City="Bangalore";
+                     dictEmp.Add(1,emp);
+
+
+
+
+                2) b) NonGeneric Collections: any TYPE(object) of data in a specific collection the NON GENERIC Collection.
+                using System.Collections;
+
+                Classes: ArrayList,Stack, Queue,HashTable
+
+                Queue q=new Queue();
+                q.Add(10);
+                q.Add(20);
+                q.Add(3.14f);
+                q.Add(4555.333d);
+                q.Add(40);
+                q.Add("Jack");
+
+                

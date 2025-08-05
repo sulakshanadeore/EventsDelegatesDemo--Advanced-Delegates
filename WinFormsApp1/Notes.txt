@@ -1,0 +1,13 @@
+﻿public delegate void EventHandler(object sender,EventArgs e)
+public event EventHAndler Click;
+--------------------
+public void Button1_Click(object sender,EventArgs e) 
+
+------------------------------------------------------
+Form1 f=new Form1();
+
+EventHandler ev=new EventHandler(f.Button1_Click);
+ev()
+
+Click+=ev;
+----------------------------------------------------

@@ -3,10 +3,10 @@ using System.IO.Pipes;
 
 namespace WinFormsApp1
 {
-    
+
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -18,13 +18,38 @@ namespace WinFormsApp1
         {
             //  MessageBox.Show("Button click event invoked");
             Employee emp = new Employee();
-            int bonusSalary=emp.CalculateSalary(Convert.ToInt32(txtinput.Text));
+            int bonusSalary = emp.CalculateSalary(Convert.ToInt32(txtinput.Text));
             MessageBox.Show($" A salary of {txtinput.Text} , would get a bonus of Rs. {bonusSalary.ToString()}");
-
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSendDisplay_Click(object sender, EventArgs e)
+        {
+            Department d = new Department();
+            d.Deptno=Convert.ToInt32(txtDeptno.Text);
+            d.DeptName = txtDeptname.Text;
+            d.City = txtcity.Text;
+
+            //Func
+            //string deptoutput= d.DisplayData();
+            // txtoutput.Text = deptoutput;
+
+
+            txtoutput.Text = d.DisplayData();
+
+            //Action
+          d.ActionForDisplayData();
+            MessageBox.Show(d.AllDataDept);
 
         }
     }

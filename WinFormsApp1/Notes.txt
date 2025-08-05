@@ -11,3 +11,18 @@ ev()
 
 Click+=ev;
 ----------------------------------------------------
+
+
+LINQ--->uses 3 types Lambda   symbol for lambda =>  
+These lambdas are delegates having different return types and different number 
+of parameters, with all parameters having same type or different types
+1) Action Lambda: return type is void.
+Action keyword, no return , upto 16 parameters.
+
+2) Function Lambda : return type is anything other tha void
+Func keyword, no return statement but the last parameter in the parameter list is 
+the return type, total 17 parameter out of which one is return type.
+
+
+3) Predicate Lambda: return type is a boolean, and it takes only one input parameter.
+Predicate keyword.

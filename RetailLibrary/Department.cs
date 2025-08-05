@@ -47,5 +47,23 @@ namespace RetailLibrary
         }
 
 
+        public bool IsValidDeptno(int deptno)
+        {
+            Predicate<int> isvalid = (deptno) => {
+                bool status = false;
+                if (deptno > 0) {
+                    status = true;
+                }
+                return status;
+
+            };
+
+            return isvalid(Deptno);
+
+
+        
+        }
+
+
     }
 }

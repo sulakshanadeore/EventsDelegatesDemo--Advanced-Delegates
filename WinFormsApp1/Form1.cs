@@ -51,6 +51,17 @@ namespace WinFormsApp1
           d.ActionForDisplayData();
             MessageBox.Show(d.AllDataDept);
 
+
+            //Predicate
+            bool status=d.IsValidDeptno(Convert.ToInt32(txtDeptno.Text));
+            if (status) {
+                MessageBox.Show("Deptno is valid");
+            }
+            else
+            {
+                MessageBox.Show("Deptno is Invalid");
+            }
+
         }
     }
 }

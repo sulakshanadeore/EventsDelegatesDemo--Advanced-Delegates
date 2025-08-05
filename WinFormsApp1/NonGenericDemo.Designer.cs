@@ -32,11 +32,13 @@
             listBox1 = new ListBox();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(122, 104);
+            button1.Location = new Point(17, 45);
             button1.Name = "button1";
             button1.Size = new Size(186, 29);
             button1.TabIndex = 0;
@@ -47,14 +49,14 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(403, 71);
+            listBox1.Location = new Point(33, 127);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(135, 244);
             listBox1.TabIndex = 1;
             // 
             // button2
             // 
-            button2.Location = new Point(122, 139);
+            button2.Location = new Point(17, 80);
             button2.Name = "button2";
             button2.Size = new Size(211, 29);
             button2.TabIndex = 2;
@@ -64,7 +66,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(582, 86);
+            button3.Location = new Point(17, 389);
             button3.Name = "button3";
             button3.Size = new Size(155, 29);
             button3.TabIndex = 3;
@@ -72,11 +74,33 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(247, 142);
+            button4.Name = "button4";
+            button4.Size = new Size(94, 29);
+            button4.TabIndex = 4;
+            button4.Text = "HashTable";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(247, 234);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 5;
+            button5.Text = "ArrayList";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // NonGenericDemo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button5);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(listBox1);
@@ -92,5 +116,7 @@
         private ListBox listBox1;
         private Button button2;
         private Button button3;
+        private Button button4;
+        private Button button5;
     }
 }

@@ -74,8 +74,50 @@ namespace WinFormsApp1
 
             }
 
-            object objQ=q.Dequeue();
+            object objQ = q.Dequeue();
             MessageBox.Show(objQ.ToString());
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Hashtable h = new Hashtable();
+            h.Add(1, "one");
+            h.Add("1", "one String");
+            h.Add(2.1, "Two");
+            h.Add('A', "FirstCharacter");
+            h.Add("LastCharacter", "Z");
+
+            foreach (DictionaryEntry item in h)
+            {
+                listBox1.Items.Add(item.Key + " " + item.Value);
+            }
+
+            //h.Remove(1);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int[] arr = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            ArrayList al = new ArrayList(2);
+            al.Add(12);
+            al.Add(3.3333f);
+            al.Add("hello");
+            al.AddRange(arr);//adds at the end, after "hello"
+
+            
+            al.Insert(0, 10000);//particular value at index(position)
+            
+
+            al.InsertRange(1, arr);//insert range particular index(position)
+            foreach (var item in al)
+            {
+                listBox1.Items.Add(item);
+            }
+
+
+
 
 
         }

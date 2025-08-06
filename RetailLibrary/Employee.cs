@@ -10,6 +10,9 @@
 
         public string City { get; set; }
 
+        public int Salary { get; set; } = 10000;
+        public int Deptno { get; set; }
+
 
         public int CalculateSalary(int bs)
         {

@@ -127,26 +127,41 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Dictionary<int, Employee> dict = new Dictionary<int, Employee>();
-            dict.Add(1, new Employee {Empid=1,EmpName="Raj",City="Pune" });
+            //  Dictionary<int, Employee> dict = new Dictionary<int, Employee>();
+            //  dict.Add(1, new Employee {Empid=1,EmpName="Raj",City="Pune" });
+            //  dict.Add(2, new Employee { Empid = 2, EmpName = "Rajesh", City = "Pune" });
+            //  dict.Add(3, new Employee { Empid = 3, EmpName = "Mahesh", City = "Bangalore" });
+            //  dict.Add(4, new Employee { Empid = 4, EmpName = "Priya", City = "Chennai" });
+            //  dict.Add(5, new Employee { Empid = 5, EmpName = "Riya", City = "Hyderabad" });
+
+            //  Dictionary<int, Employee>.Enumerator Dictitems = dict.GetEnumerator();
+            ////while (Dictitems.MoveNext())
+            ////  {
+            ////      listBox1.Items.Add(Dictitems.Current.Key +  " " + Dictitems.Current.Value.Empid +"  "+ Dictitems.Current.Value.EmpName +  " " +Dictitems.Current.Value.City);
+
+            ////  }
+
+
+
+            //  foreach (KeyValuePair<int,Employee> item in dict)
+            //  {
+            //      listBox1.Items.Add(item.Key + " " + item.Value.Empid + "  " + item.Value.EmpName + " " + item.Value.City);
+            //  }
+
+
+
+            SortedDictionary<int, Employee> dict = new SortedDictionary<int, Employee>();
+            dict.Add(5, new Employee { Empid = 5, EmpName = "Raj", City = "Pune" });
             dict.Add(2, new Employee { Empid = 2, EmpName = "Rajesh", City = "Pune" });
-            dict.Add(3, new Employee { Empid = 3, EmpName = "Mahesh", City = "Bangalore" });
-            dict.Add(4, new Employee { Empid = 4, EmpName = "Priya", City = "Chennai" });
-            dict.Add(5, new Employee { Empid = 5, EmpName = "Riya", City = "Hyderabad" });
-
-            Dictionary<int, Employee>.Enumerator Dictitems = dict.GetEnumerator();
-          //while (Dictitems.MoveNext())
-          //  {
-          //      listBox1.Items.Add(Dictitems.Current.Key +  " " + Dictitems.Current.Value.Empid +"  "+ Dictitems.Current.Value.EmpName +  " " +Dictitems.Current.Value.City);
-          
-          //  }
-
-
+            dict.Add(1, new Employee { Empid = 1, EmpName = "Mahesh", City = "Bangalore" });
+            dict.Add(3, new Employee { Empid = 3, EmpName = "Priya", City = "Chennai" });
+            dict.Add(4, new Employee { Empid = 4, EmpName = "Riya", City = "Hyderabad" });
 
             foreach (KeyValuePair<int,Employee> item in dict)
             {
-                listBox1.Items.Add(item.Key + " " + item.Value.Empid + "  " + item.Value.EmpName + " " + item.Value.City);
+                    listBox1.Items.Add(item.Key + " " + item.Value.Empid + "  " + item.Value.EmpName + " " + item.Value.City);
             }
+
 
 
 

@@ -125,7 +125,14 @@ Predicate keyword.
           "foreach loop " with the collection
           IEnumerator is a return type of GetEnumerator
          * GetEnumerator()
+         --------------------------------------------------------------------
 
+
+         ----Many extension method and Lambda
+
+         Objects--- OLINQ----- Array,List,Dictionary, HAshtable ,Queue, Stack etc
+         XML File -------XLINQ--filter,find ,sum,avg, min,max,count etc
+         SQL Table----> (DataSet/Datatable)----- DLINQ
 
 
 

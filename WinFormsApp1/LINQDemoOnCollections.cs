@@ -39,15 +39,15 @@ namespace WinFormsApp1
 
 
             //Key --- group----group/ed Key
-          
+
 
             var empdata = employees.GroupBy(t => t.Deptno).
                 Select(y => new
-            {
-                DepartmentNo = y.Key,
-                EmployeeDetails = y.Select(y1 =>new {y1.EmpName,y1.Salary} ),
-                Count = y.Count()
-            });
+                {
+                    DepartmentNo = y.Key,
+                    EmployeeDetails = y.Select(y1 => new { y1.EmpName, y1.Salary }),
+                    Count = y.Count()
+                });
 
             string data = "";
             foreach (var item in empdata)
@@ -56,9 +56,9 @@ namespace WinFormsApp1
 
                 foreach (var item2 in item.EmployeeDetails)
                 {
-                    
-                            listBox1.Items.Add( item2.EmpName+ " " + item2.Salary);
-                 
+
+                    listBox1.Items.Add(item2.EmpName + " " + item2.Salary);
+
 
                 }
             }
@@ -67,32 +67,63 @@ namespace WinFormsApp1
 
 
 
-                //ORder by --ascending
-                //var emplistBySal=employees.OrderBy(s => s.Salary).ToList();
-                //   var emplistBySal = employees.OrderByDescending(s => s.Salary).ToList();
+            //ORder by --ascending
+            //var emplistBySal=employees.OrderBy(s => s.Salary).ToList();
+            //   var emplistBySal = employees.OrderByDescending(s => s.Salary).ToList();
 
-                //foreach (var item in emplistBySal)
-                //{
-                //   listBox1.Items.Add( item.Empid +  " "  +  item.Salary);
-                //}
-
-
-
-
-                //var data = employees.Where(e1 => e1.Empid == 10).SingleOrDefault();
-                //textBox1.Text += string.Concat(data.Empid, data.EmpName, data.City);
-
-                //foreach (var item in data)
-                //{
-                //    textBox1.Text += string.Concat(item.Empid, item.EmpName, item.City);
-                //}
+            //foreach (var item in emplistBySal)
+            //{
+            //   listBox1.Items.Add( item.Empid +  " "  +  item.Salary);
+            //}
 
 
 
 
+            //var data = employees.Where(e1 => e1.Empid == 10).SingleOrDefault();
+            //textBox1.Text += string.Concat(data.Empid, data.EmpName, data.City);
+
+            //foreach (var item in data)
+            //{
+            //    textBox1.Text += string.Concat(item.Empid, item.EmpName, item.City);
+            //}
 
 
+
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //personobj anonymous object --- personName etc are implicitly defined types with datatypes string,int,int
+            // var personObj = new {personName="Praj",PersonAge=19,Persondid=12 };
+
+            StudentData s = new StudentData();
+            List<string> all=s.AllData;
+            foreach (var item in all)
+            {
+                MessageBox.Show(item);
             }
+
+
+            List<string> passedStudData=s.Passed;
+            foreach (var item in passedStudData)
+            {
+                MessageBox.Show(item + " Passed");
+            }
+
+            List<string> failedStudData = s.Failed;
+            foreach (var item in failedStudData)
+            {
+                MessageBox.Show(item + " Failed");
+            }
+
+
+
+
+
         }
     }
+}
 

@@ -112,4 +112,32 @@ Predicate keyword.
                 q.Add(40);
                 q.Add("Jack");
 
-                
+          --------------------------------------------------------------
+          
+          System.Collections;
+
+        *  IEnumerator
+             IEnumerable 
+
+          foreach---- Iterating the collection
+
+          IEnumerable exposes IEnumerator by having a method GetEnumerator() which helps to use
+          "foreach loop " with the collection
+          IEnumerator is a return type of GetEnumerator
+         * GetEnumerator()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -107,6 +107,7 @@
             Controls.Add(button1);
             Name = "NonGenericDemo";
             Text = "NonGenericDemo";
+            Load += NonGenericDemo_Load;
             ResumeLayout(false);
         }
 

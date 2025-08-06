@@ -2,7 +2,7 @@
 {
     //Step 1
     public delegate int SalaryCalculation(int bs);
-    public class Employee
+    public class Employee:IComparable<Employee>
     {
 
         public int Empid { get; set; }
@@ -43,5 +43,12 @@
 
         }
 
+        public int CompareTo(Employee? other)
+        {
+            //throw new NotImplementedException();
+            if (other == null) return 1;
+            return this.Empid.CompareTo(other.Empid);
+            
+        }
     }
 }

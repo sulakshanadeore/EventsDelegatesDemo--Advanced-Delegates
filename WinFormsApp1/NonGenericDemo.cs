@@ -105,10 +105,14 @@ namespace WinFormsApp1
             al.Add(3.3333f);
             al.Add("hello");
             al.AddRange(arr);//adds at the end, after "hello"
+            //---IEnumerator---- al.GetEnumerator() ---supports iteration over a collection(Arraylist)
+            //IEnumerable exposes IEnumerator
 
-            
+           
+
+
             al.Insert(0, 10000);//particular value at index(position)
-            
+
 
             al.InsertRange(1, arr);//insert range particular index(position)
             foreach (var item in al)
@@ -119,6 +123,11 @@ namespace WinFormsApp1
 
 
 
+
+        }
+
+        private void NonGenericDemo_Load(object sender, EventArgs e)
+        {
 
         }
     }

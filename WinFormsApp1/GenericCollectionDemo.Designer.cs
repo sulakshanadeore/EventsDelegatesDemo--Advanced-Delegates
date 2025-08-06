@@ -30,15 +30,16 @@
         {
             button1 = new Button();
             listBox1 = new ListBox();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Location = new Point(64, 107);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(164, 75);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Stack,Queue,List";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -50,11 +51,22 @@
             listBox1.Size = new Size(150, 304);
             listBox1.TabIndex = 1;
             // 
+            // button2
+            // 
+            button2.Location = new Point(55, 226);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 2;
+            button2.Text = "Dictionary";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // GenericCollectionDemo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(listBox1);
             Controls.Add(button1);
             Name = "GenericCollectionDemo";
@@ -67,5 +79,6 @@
 
         private Button button1;
         private ListBox listBox1;
+        private Button button2;
     }
 }

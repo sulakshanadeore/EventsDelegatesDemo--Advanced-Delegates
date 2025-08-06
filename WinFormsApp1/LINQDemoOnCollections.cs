@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,24 +29,37 @@ namespace WinFormsApp1
             //group by
 
 
-                
-            employees.Add(new Employee { Empid = 10, EmpName = "Sara", City = "Pune",Salary=20000,Deptno=10 });
-            employees.Add(new Employee { Empid = 11, EmpName = "Piya", City = "Chennai",Salary=30000,Deptno=20 });
-            employees.Add(new Employee {Empid=12,EmpName="Kia",City="Bangalore",Salary=5000,Deptno=30 });
-            employees.Add(new Employee { Empid = 13, EmpName = "Hari", City = "Pune",Deptno=10});
-            employees.Add(new Employee { Empid = 14, EmpName = "Simran", City = "Pune",Deptno=10 });
-            employees.Add(new Employee { Empid = 15, EmpName = "Raj", City = "Pune",Deptno=20 });
+
+            employees.Add(new Employee { Empid = 10, EmpName = "Sara", City = "Pune", Salary = 20000, Deptno = 10 });
+            employees.Add(new Employee { Empid = 11, EmpName = "Piya", City = "Chennai", Salary = 30000, Deptno = 20 });
+            employees.Add(new Employee { Empid = 12, EmpName = "Kia", City = "Bangalore", Salary = 5000, Deptno = 30 });
+            employees.Add(new Employee { Empid = 13, EmpName = "Hari", City = "Pune", Deptno = 10 });
+            employees.Add(new Employee { Empid = 14, EmpName = "Simran", City = "Pune", Deptno = 10 });
+            employees.Add(new Employee { Empid = 15, EmpName = "Raj", City = "Pune", Deptno = 20 });
 
 
             //Key --- group----group/ed Key
-            var empdata=employees.GroupBy(t => t.Deptno);
+          
 
+            var empdata = employees.GroupBy(t => t.Deptno).
+                Select(y => new
+            {
+                DepartmentNo = y.Key,
+                EmployeeDetails = y.Select(y1 =>new {y1.EmpName,y1.Salary} ),
+                Count = y.Count()
+            });
+
+            string data = "";
             foreach (var item in empdata)
             {
-                listBox1.Items.Add("Deptno=" + item.Key);
-                foreach (var item1 in item)
+                listBox1.Items.Add($" Deptno=  {item.DepartmentNo} and  {item.Count} employees");
+
+                foreach (var item2 in item.EmployeeDetails)
                 {
-                    listBox1.Items.Add(item1.EmpName + " " + item1.Empid + " " + item1.Salary);   
+                    
+                            listBox1.Items.Add( item2.EmpName+ " " + item2.Salary);
+                 
+
                 }
             }
 
@@ -53,31 +67,32 @@ namespace WinFormsApp1
 
 
 
-            //ORder by --ascending
-            //var emplistBySal=employees.OrderBy(s => s.Salary).ToList();
-         //   var emplistBySal = employees.OrderByDescending(s => s.Salary).ToList();
+                //ORder by --ascending
+                //var emplistBySal=employees.OrderBy(s => s.Salary).ToList();
+                //   var emplistBySal = employees.OrderByDescending(s => s.Salary).ToList();
 
-            //foreach (var item in emplistBySal)
-            //{
-            //   listBox1.Items.Add( item.Empid +  " "  +  item.Salary);
-            //}
-
-
-
-
-            //var data = employees.Where(e1 => e1.Empid == 10).SingleOrDefault();
-            //textBox1.Text += string.Concat(data.Empid, data.EmpName, data.City);
-
-            //foreach (var item in data)
-            //{
-            //    textBox1.Text += string.Concat(item.Empid, item.EmpName, item.City);
-            //}
+                //foreach (var item in emplistBySal)
+                //{
+                //   listBox1.Items.Add( item.Empid +  " "  +  item.Salary);
+                //}
 
 
 
 
+                //var data = employees.Where(e1 => e1.Empid == 10).SingleOrDefault();
+                //textBox1.Text += string.Concat(data.Empid, data.EmpName, data.City);
+
+                //foreach (var item in data)
+                //{
+                //    textBox1.Text += string.Concat(item.Empid, item.EmpName, item.City);
+                //}
 
 
+
+
+
+
+            }
         }
     }
-}
+

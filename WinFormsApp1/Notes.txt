@@ -150,9 +150,13 @@ the data is frequently used. To use it write ToList, Include or Join.  One large
 
 
 Deferred Loading: Loads the data only when it is accessed, On demand during the runtime, more db calls, used when the data
-is rarely needed, requires virtual navigation, requires writing multiple small queries
-Lo
-
+is rarely needed, requires virtual navigation, requires writing multiple small queries.
+---------------------------------------------------------------------
+Joins
+1) Inner Join
+2) Left Join not there directly, but is achieved by using Group Join + Select many + DefaultIfEmpty
+3) Cartesian Join(Cross Join)
+4) Multiple Joins(Chaining of Joins)
 
 
 

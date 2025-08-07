@@ -145,7 +145,13 @@ var variablename= from [range_variable/scope variable] in datasource
 *** All queries are executed when the foreach iterates, so we have lazy loading by default, which is also called 
 "Deferred Loading".
 
-Eager Loading           Deferred Loading
+Eager Loading: Loads the data immediately with the main data, Good when you want fewer data calls, larger resultset, and 
+the data is frequently used. To use it write ToList, Include or Join.  One large query with ""join""
+
+
+Deferred Loading: Loads the data only when it is accessed, On demand during the runtime, more db calls, used when the data
+is rarely needed, requires virtual navigation, requires writing multiple small queries
+Lo
 
 
 

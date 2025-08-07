@@ -31,6 +31,7 @@
             button1 = new Button();
             listBox1 = new ListBox();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -61,11 +62,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(397, 60);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 3;
+            button3.Text = "cartesian Join";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // JoinsDemo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(listBox1);
             Controls.Add(button1);
@@ -79,5 +91,6 @@
         private Button button1;
         private ListBox listBox1;
         private Button button2;
+        private Button button3;
     }
 }

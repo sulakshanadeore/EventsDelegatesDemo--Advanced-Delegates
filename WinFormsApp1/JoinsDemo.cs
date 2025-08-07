@@ -71,21 +71,26 @@ namespace WinFormsApp1
                          join dept in deptlist
                        on emp.Deptno equals dept.Deptno into empDeptGroup
                          from dept in empDeptGroup.DefaultIfEmpty()
-                         select new { emp.EmpName, 
-                             Deptname = dept != null ? dept.Dname : "No Such Department found" };
-        foreach (var item in result)
-    	{
+                         select new
+                         {
+                             emp.EmpName,
+                             Deptname = dept != null ? dept.Dname : "No Such Department found"
+                         };
+            foreach (var item in result)
+            {
                 listBox1.Items.Add(item.EmpName + "----" + item.Deptname);
-	    }
+            }
             listBox1.Items.Add("---------------");
 
             var result1 = emplist.GroupJoin(deptlist,
                 emp => emp.Deptno, dept => dept.Deptno,
                 (emp, empdeptgroup) => new { emp, empdeptgroup })
                 .SelectMany(x => x.empdeptgroup.DefaultIfEmpty(),
-                (x, dept) => new 
-                { x.emp.EmpName, 
-                    Deptname = dept != null ? dept.Dname : "No Such Department found" });
+                (x, dept) => new
+                {
+                    x.emp.EmpName,
+                    Deptname = dept != null ? dept.Dname : "No Such Department found"
+                });
 
             foreach (var item in result1)
             {
@@ -94,6 +99,25 @@ namespace WinFormsApp1
 
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var result = emplist.SelectMany(emp => deptlist, (emp, depts) => new {emp.EmpName,Deptname=depts.Dname});
+            foreach (var item in result)
+            {
+                listBox1.Items.Add(item.EmpName + "----" + item.Deptname);
+            }
+            listBox1.Items.Add("------");
+
+            var result1 = from emp in emplist
+                          from dept in deptlist
+                          select new {emp.EmpName,Deptname=dept.Dname };
+
+            foreach (var item in result1)
+            {
+                listBox1.Items.Add(item.EmpName + "----" + item.Deptname);
+            }
         }
     }
 }

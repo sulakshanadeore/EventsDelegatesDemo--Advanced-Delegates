@@ -31,6 +31,8 @@
             button1 = new Button();
             listBox1 = new ListBox();
             button2 = new Button();
+            button3 = new Button();
+            listBox2 = new ListBox();
             SuspendLayout();
             // 
             // button1
@@ -62,17 +64,36 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(42, 341);
+            button3.Name = "button3";
+            button3.Size = new Size(159, 29);
+            button3.TabIndex = 3;
+            button3.Text = "Select Many";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // listBox2
+            // 
+            listBox2.FormattingEnabled = true;
+            listBox2.Location = new Point(510, 106);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(150, 244);
+            listBox2.TabIndex = 4;
+            // 
             // QuerySyntaxDemos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listBox2);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(listBox1);
             Controls.Add(button1);
             Name = "QuerySyntaxDemos";
             Text = "QuerySyntaxDemos";
-            Load += QuerySyntaxDemos_Load;
             ResumeLayout(false);
         }
 
@@ -81,5 +102,7 @@
         private Button button1;
         private ListBox listBox1;
         private Button button2;
+        private Button button3;
+        private ListBox listBox2;
     }
 }

@@ -57,7 +57,7 @@ namespace WinFormsApp1
             //                             select new {EmployeeID= edata.Empid, EmployeeName=edata.EmpName }
             //              };
 
-           // select g;
+            // select g;
 
 
             var grouped = employees.GroupBy(e1 => e1.Deptno).
@@ -65,10 +65,14 @@ namespace WinFormsApp1
                 {
                     Department = e1.Key,
                     EmpCount = e1.Count(),
-                    emplist = e1.Select(y1 => new {EmployeeID=y1.Empid, EmployeeName= y1.EmpName
-                   ,EmpSalary =y1.Salary
+                    emplist = e1.Select(y1 => new
+                    {
+                        EmployeeID = y1.Empid,
+                        EmployeeName = y1.EmpName
+                   ,
+                        EmpSalary = y1.Salary
                     })
-                }); 
+                });
 
             employees.Add(new Employee { Empid = 16, EmpName = "Vishal", City = "Pune", Deptno = 10 });
             employees.Add(new Employee { Empid = 17, EmpName = "Rima", City = "Pune", Deptno = 20 });
@@ -76,16 +80,81 @@ namespace WinFormsApp1
 
             foreach (var item in grouped)
             {
-                listBox1.Items.Add("Deptno=" + item.Department + " and Employees= " + item.EmpCount );
+                listBox1.Items.Add("Deptno=" + item.Department + " and Employees= " + item.EmpCount);
                 //    listBox1.Items.Add("Deptno=" + item.Key + " and Employees= " + item.Count());
                 foreach (var item1 in item.emplist)
                 {
-                   // listBox1.Items.Add(item1.Empid + " " + item1.EmpName + item1.Salary);
+                    // listBox1.Items.Add(item1.Empid + " " + item1.EmpName + item1.Salary);
                     listBox1.Items.Add(item1.EmployeeID + " " + item1.EmployeeName + " " + item1.EmpSalary);
                 }
 
-                
 
+
+            }
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<Student> C_Crs_Students = new List<Student>() 
+            { 
+              new Student{Name="Archana",Marks=50 },
+                new Student{Name="Simran",Marks=70 },
+                new Student{Name="Gita",Marks=80 }
+            };
+            List<Student> Cpp_Crs_Students = new List<Student>()
+            {
+                new Student{Name="Mitali",Marks=45 },
+                new Student{Name="Gauri",Marks=50 },
+                new Student{Name="Hari",Marks=60 }
+            
+            };
+
+            List<Student> CSharp_Students = new List<Student>() {
+                new Student{Name="John",Marks=67 },
+                new Student{Name="Jim",Marks=87  },
+                new Student{Name="Tim",Marks=77  } 
+            };
+
+            var CourseData = new List<Course> {
+
+                new Course{CrsName="C Programming", Students=C_Crs_Students },
+                new Course{CrsName="C++ Programming", Students=Cpp_Crs_Students },
+                new Course{CrsName="CSharp",Students=CSharp_Students }
+                                                 };
+
+
+            
+
+            var allNamesData=CourseData.SelectMany(x => x.Students);
+
+            foreach (var item in allNamesData)
+            {
+                listBox1.Items.Add(item.Name);
+            }
+            listBox1.Items.Add("--------------");
+
+            var DataFiltered = CourseData.SelectMany(c => c.Students,
+                (c1, s) => new { studentName = s.Name, AchievedMarks=(s.Marks*3)/100, CrName = c1.CrsName });
+
+            foreach (var item in DataFiltered)
+            {
+                listBox1.Items.Add(item.CrName + " " + item.studentName + item.AchievedMarks);
+            }
+
+            var skipWhile = allNamesData.SkipWhile(a => a.Name.StartsWith('S'));
+
+            //foreach (var item in skipWhile)
+            //{
+            //    listBox2.Items.Add(item.Name);
+            //}
+
+            int[] numberData = new int[] { 11, 121, 3, 7,342, 22221, 34, 17, 7654 };
+            var numbers = numberData.SkipWhile(n => n < 50).Take(1);
+            foreach (var item in numbers)
+            {
+                listBox2.Items.Add(item);
             }
 
 

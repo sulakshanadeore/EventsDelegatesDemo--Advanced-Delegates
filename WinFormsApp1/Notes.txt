@@ -133,9 +133,19 @@ Predicate keyword.
          Objects--- OLINQ----- Array,List,Dictionary, HAshtable ,Queue, Stack etc
          XML File -------XLINQ--filter,find ,sum,avg, min,max,count etc
          SQL Table----> (DataSet/Datatable)----- DLINQ
+----------------------------------------------------
 
+var variablename= from [range_variable/scope variable] in datasource
+                    order by variable
+                    group variable by  variable into groupname
+                  where condition [with and/or/not]
+                  select;
+---------------------------------------------------------
 
+*** All queries are executed when the foreach iterates, so we have lazy loading by default, which is also called 
+"Deferred Loading".
 
+Eager Loading           Deferred Loading
 
 
 
